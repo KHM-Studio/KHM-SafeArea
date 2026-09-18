@@ -1,0 +1,145 @@
+{
+  "name": "@khm/safearea",
+  "version": "0.1.0",
+  "description": "Safe areas, dynamic mobile viewport and virtual keyboard handling for the modern web.",
+  "type": "module",
+  "license": "MIT",
+  "author": "KHM Studio",
+  "keywords": [
+    "safe-area",
+    "viewport",
+    "visual-viewport",
+    "virtual-keyboard",
+    "mobile",
+    "pwa",
+    "astro"
+  ],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./auto": {
+      "types": "./dist/auto.d.ts",
+      "import": "./dist/auto.js",
+      "default": "./dist/auto.js"
+    },
+    "./css": "./dist/css/index.css",
+    "./css/variables": "./dist/css/variables.css",
+    "./css/utilities": "./dist/css/utilities.css",
+    "./astro": {
+      "types": "./dist/astro/SafeArea.astro.d.ts",
+      "import": "./dist/astro/SafeArea.astro",
+      "default": "./dist/astro/SafeArea.astro"
+    },
+    "./react": {
+      "types": "./dist/react/index.d.ts",
+      "import": "./dist/react/index.js",
+      "default": "./dist/react/index.js"
+    },
+    "./vue": {
+      "types": "./dist/vue/index.d.ts",
+      "import": "./dist/vue/index.js",
+      "default": "./dist/vue/index.js"
+    },
+    "./svelte": {
+      "types": "./dist/svelte/SafeArea.svelte.d.ts",
+      "svelte": "./dist/svelte/SafeArea.svelte",
+      "import": "./dist/svelte/SafeArea.svelte",
+      "default": "./dist/svelte/SafeArea.svelte"
+    },
+    "./element": {
+      "types": "./dist/element/index.d.ts",
+      "import": "./dist/element/index.js",
+      "default": "./dist/element/index.js"
+    },
+    "./element/auto": {
+      "types": "./dist/element/auto.d.ts",
+      "import": "./dist/element/auto.js",
+      "default": "./dist/element/auto.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "sideEffects": [
+    "./dist/auto.js",
+    "./dist/element/auto.js",
+    "./dist/css/*.css"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "peerDependencies": {
+    "astro": ">=4 <8",
+    "react": ">=18 <20",
+    "svelte": ">=4 <6",
+    "vue": ">=3.3 <4"
+  },
+  "peerDependenciesMeta": {
+    "astro": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    },
+    "svelte": {
+      "optional": true
+    },
+    "vue": {
+      "optional": true
+    }
+  },
+  "scripts": {
+    "clean": "node scripts/clean.mjs",
+    "build": "npm run clean && tsc -p tsconfig.build.json && node scripts/copy-assets.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:browser": "npm run build && playwright test",
+    "check:package": "node scripts/check-package.mjs && node scripts/check-framework-assets.mjs",
+    "check:tarball": "npm run build && node scripts/check-packed-consumer.mjs",
+    "check": "npm run typecheck && npm run lint && npm run format:check && npm test && npm run build && npm run check:package",
+    "check:all": "npm run check && npm run test:browser && npm run check:tarball && npm audit",
+    "prepack": "npm run check",
+    "prepublishOnly": "npm run test:browser && npm run check:tarball && npm audit"
+  },
+  "devDependencies": {
+    "@astrojs/compiler": "^2.13.0",
+    "@eslint/js": "^9.35.0",
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^24.3.1",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "eslint": "^9.35.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^16.3.0",
+    "happy-dom": "^20.14.5",
+    "prettier": "^3.6.2",
+    "react": "^19.1.1",
+    "svelte": "^5.38.7",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.42.0",
+    "vitest": "^5.0.1",
+    "vue": "^3.5.21"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KHM-Studio/KHM-SafeArea.git"
+  },
+  "homepage": "https://github.com/KHM-Studio/KHM-SafeArea#readme",
+  "bugs": {
+    "url": "https://github.com/KHM-Studio/KHM-SafeArea/issues"
+  }
+}

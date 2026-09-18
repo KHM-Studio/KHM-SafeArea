@@ -1,0 +1,25 @@
+---
+import { safeAreaClasses, type SafeAreaPaddingProps } from "../adapters/classes.js";
+
+export interface Props extends SafeAreaPaddingProps {
+  as?: string;
+  class?: string;
+  [attribute: string]: unknown;
+}
+
+const {
+  as: Tag = "div",
+  class: className,
+  top = false,
+  right = false,
+  bottom = false,
+  left = false,
+  x = false,
+  y = false,
+  all = false,
+  ...attributes
+} = Astro.props;
+const classes = safeAreaClasses({ top, right, bottom, left, x, y, all }, className);
+---
+
+<Tag class={classes || undefined} {...attributes}><slot /></Tag>

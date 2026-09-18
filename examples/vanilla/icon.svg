@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="KHM SafeArea">
+  <rect width="512" height="512" rx="112" fill="#0b1020"/>
+  <path d="M118 178c0-33 27-60 60-60h156c33 0 60 27 60 60v156c0 33-27 60-60 60H178c-33 0-60-27-60-60V178Z" fill="none" stroke="#7dd3fc" stroke-width="28"/>
+  <path d="M210 118h92a22 22 0 0 1 0 44h-92a22 22 0 0 1 0-44Z" fill="#7dd3fc"/>
+</svg>

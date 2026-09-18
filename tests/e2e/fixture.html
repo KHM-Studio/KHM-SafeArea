@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <link rel="icon" href="data:," />
+    <title>KHM SafeArea browser fixture</title>
+    <link rel="stylesheet" href="/dist/css/index.css" />
+    <style>
+      :root {
+        color-scheme: light dark;
+        font-family: system-ui, sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: Canvas;
+        color: CanvasText;
+      }
+      header,
+      nav {
+        min-height: 3.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #14213d;
+        color: #fff;
+      }
+      main {
+        min-height: var(--khm-visible-height);
+        padding-block-start: calc(4.25rem + var(--khm-safe-top));
+        padding-block-end: calc(5rem + var(--khm-safe-bottom));
+      }
+      .content {
+        width: min(100% - 2rem, 42rem);
+        margin-inline: auto;
+      }
+      .spacer {
+        min-height: 30vh;
+      }
+      label {
+        display: block;
+        margin-block-end: 0.5rem;
+      }
+      input {
+        width: 100%;
+        min-height: 44px;
+        padding: 0.65rem;
+        font: inherit;
+      }
+      nav {
+        justify-content: space-around;
+      }
+      nav a {
+        min-width: 44px;
+        min-height: 44px;
+        display: grid;
+        place-items: center;
+        color: #fff;
+      }
+      :focus-visible {
+        outline: 3px solid #0ea5e9;
+        outline-offset: 3px;
+      }
+    </style>
+    <script type="module" src="/dist/auto.js"></script>
+    <script type="module" src="/dist/element/auto.js"></script>
+  </head>
+  <body>
+    <header class="safe-fixed-top"><strong>KHM SafeArea</strong></header>
+    <khm-safe-area top bottom class="consumer-shell">
+      <main id="main-content">
+        <div class="content">
+          <h1>Browser validation</h1>
+          <p id="status" role="status">Ready</p>
+          <div class="spacer" aria-hidden="true"></div>
+          <label for="message">Message</label>
+          <input id="message" name="message" autocomplete="off" />
+        </div>
+      </main>
+    </khm-safe-area>
+    <nav class="safe-fixed-bottom" aria-label="Primary">
+      <a href="#main-content">Home</a><a href="#message">Compose</a>
+    </nav>
+  </body>
+</html>

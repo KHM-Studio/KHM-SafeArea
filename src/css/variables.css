@@ -1,0 +1,32 @@
+:root {
+  --khm-native-safe-top: env(safe-area-inset-top, 0px);
+  --khm-native-safe-right: env(safe-area-inset-right, 0px);
+  --khm-native-safe-bottom: env(safe-area-inset-bottom, 0px);
+  --khm-native-safe-left: env(safe-area-inset-left, 0px);
+  --khm-safe-max-top: env(safe-area-max-inset-top, var(--khm-native-safe-top));
+  --khm-safe-max-right: env(safe-area-max-inset-right, var(--khm-native-safe-right));
+  --khm-safe-max-bottom: env(safe-area-max-inset-bottom, var(--khm-native-safe-bottom));
+  --khm-safe-max-left: env(safe-area-max-inset-left, var(--khm-native-safe-left));
+  --khm-safe-top: var(--khm-native-safe-top);
+  --khm-safe-right: var(--khm-native-safe-right);
+  --khm-safe-bottom: var(--khm-native-safe-bottom);
+  --khm-safe-left: var(--khm-native-safe-left);
+  --khm-viewport-width: 100vw;
+  --khm-viewport-height: 100vh;
+  --khm-visible-width: 100vw;
+  --khm-visible-height: 100vh;
+  --khm-keyboard-height: 0px;
+  --khm-keyboard-open: 0;
+  --khm-offset-top: 0px;
+  --khm-offset-left: 0px;
+  --khm-viewport-scale: 1;
+  --khm-orientation-landscape: 0;
+  --khm-standalone: 0;
+}
+
+@supports (height: 100dvh) {
+  :root {
+    --khm-viewport-height: 100dvh;
+    --khm-visible-height: 100dvh;
+  }
+}

@@ -1,0 +1,67 @@
+:where(.safe-top, .khm-safe-top) {
+  padding-top: var(--khm-safe-top, env(safe-area-inset-top, 0px));
+}
+
+:where(.safe-right, .khm-safe-right) {
+  padding-right: var(--khm-safe-right, env(safe-area-inset-right, 0px));
+}
+
+:where(.safe-bottom, .khm-safe-bottom) {
+  padding-bottom: var(--khm-safe-bottom, env(safe-area-inset-bottom, 0px));
+}
+
+:where(.safe-left, .khm-safe-left) {
+  padding-left: var(--khm-safe-left, env(safe-area-inset-left, 0px));
+}
+
+:where(.safe-x, .khm-safe-x) {
+  padding-right: var(--khm-safe-right, env(safe-area-inset-right, 0px));
+  padding-left: var(--khm-safe-left, env(safe-area-inset-left, 0px));
+}
+
+:where(.safe-y, .khm-safe-y) {
+  padding-top: var(--khm-safe-top, env(safe-area-inset-top, 0px));
+  padding-bottom: var(--khm-safe-bottom, env(safe-area-inset-bottom, 0px));
+}
+
+:where(.safe-all, .khm-safe-all) {
+  padding: var(--khm-safe-top, env(safe-area-inset-top, 0px))
+    var(--khm-safe-right, env(safe-area-inset-right, 0px))
+    var(--khm-safe-bottom, env(safe-area-inset-bottom, 0px))
+    var(--khm-safe-left, env(safe-area-inset-left, 0px));
+}
+
+:where(.safe-screen, .khm-safe-screen) {
+  box-sizing: border-box;
+  width: var(--khm-visible-width, 100vw);
+  height: var(--khm-visible-height, 100vh);
+}
+
+:where(.safe-min-screen, .khm-safe-min-screen) {
+  box-sizing: border-box;
+  min-height: var(--khm-visible-height, 100vh);
+}
+
+:where(.safe-fixed-top, .khm-safe-fixed-top) {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding-top: var(--khm-safe-top, env(safe-area-inset-top, 0px));
+  padding-right: var(--khm-safe-right, env(safe-area-inset-right, 0px));
+  padding-left: var(--khm-safe-left, env(safe-area-inset-left, 0px));
+}
+
+:where(.safe-fixed-bottom, .khm-safe-fixed-bottom) {
+  position: fixed;
+  z-index: 10;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding-right: var(--khm-safe-right, env(safe-area-inset-right, 0px));
+  padding-bottom: var(--khm-safe-bottom, env(safe-area-inset-bottom, 0px));
+  padding-left: var(--khm-safe-left, env(safe-area-inset-left, 0px));
+}

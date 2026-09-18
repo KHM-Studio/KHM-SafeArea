@@ -1,0 +1,46 @@
+:root {
+  color-scheme: dark;
+  font-family: system-ui, sans-serif;
+  background: #0b1020;
+  color: #eef2ff;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+header,
+nav {
+  min-height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: #151d35;
+}
+main {
+  min-height: var(--khm-visible-height);
+  padding-top: calc(4rem + var(--khm-safe-top));
+  padding-bottom: calc(5rem + var(--khm-safe-bottom));
+}
+.spacer {
+  min-height: 70vh;
+}
+input {
+  display: block;
+  width: 100%;
+  min-height: 2.75rem;
+  margin-top: 0.5rem;
+  font: inherit;
+}
+a {
+  min-width: 44px;
+  min-height: 44px;
+  display: grid;
+  place-items: center;
+  color: #a9c5ff;
+}
+:focus-visible {
+  outline: 3px solid #7dd3fc;
+  outline-offset: 3px;
+}

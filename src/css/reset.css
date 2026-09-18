@@ -1,0 +1,8 @@
+/* Deliberately scoped: KHM SafeArea never applies a global visual reset. */
+:where(.khm-safe-screen, .khm-safe-min-screen, .khm-safe-fixed-top, .khm-safe-fixed-bottom) {
+  max-width: 100%;
+}
+
+khm-safe-area:not([hidden]) {
+  display: block;
+}
