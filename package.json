@@ -1,5 +1,5 @@
 {
-  "name": "@khm/safearea",
+  "name": "@khm-studio/safearea",
   "version": "0.1.0",
   "description": "Safe areas, dynamic mobile viewport and virtual keyboard handling for the modern web.",
   "type": "module",

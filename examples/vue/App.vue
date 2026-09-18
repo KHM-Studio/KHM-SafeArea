@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { SafeArea, useSafeArea } from "@khm/safearea/vue";
-import "@khm/safearea/css";
+import { SafeArea, useSafeArea } from "@khm-studio/safearea/vue";
+import "@khm-studio/safearea/css";
 const state = useSafeArea();
 </script>
 

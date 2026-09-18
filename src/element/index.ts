@@ -20,7 +20,7 @@ function paddingProps(element: Element): SafeAreaPaddingProps {
 
 /**
  * Light-DOM wrapper that maps boolean directional attributes to KHM utility classes.
- * Import `@khm/safearea/css` separately so the application controls stylesheet order.
+ * Import `@khm-studio/safearea/css` separately so the application controls stylesheet order.
  */
 export class KhmSafeAreaElement extends HTMLElementBase {
   static get observedAttributes(): readonly string[] {

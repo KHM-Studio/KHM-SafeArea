@@ -1,7 +1,7 @@
 import { createSafeArea } from "./core/safe-area.js";
 import type { SafeAreaController } from "./types.js";
 
-const AUTO_KEY = Symbol.for("@khm/safearea/auto");
+const AUTO_KEY = Symbol.for("@khm-studio/safearea/auto");
 type GlobalWithSafeArea = typeof globalThis & { [AUTO_KEY]?: SafeAreaController };
 const globalScope = globalThis as GlobalWithSafeArea;
 

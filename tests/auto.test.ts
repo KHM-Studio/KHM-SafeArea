@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 
-const autoKey = Symbol.for("@khm/safearea/auto");
+const autoKey = Symbol.for("@khm-studio/safearea/auto");
 
 afterEach(() => {
   const scope = globalThis as Record<symbol, unknown>;

@@ -21,7 +21,7 @@ honoring WebKit's safe-area environment values; it does not inspect device model
 ## Install
 
 ```bash
-npm install @khm/safearea
+npm install @khm-studio/safearea
 ```
 
 Use this viewport policy in your document. KHM SafeArea warns during local development if
@@ -36,8 +36,8 @@ Do not add `maximum-scale=1` or `user-scalable=no`; users must retain pinch zoom
 ## Quick start
 
 ```ts
-import "@khm/safearea/css";
-import "@khm/safearea/auto";
+import "@khm-studio/safearea/css";
+import "@khm-studio/safearea/auto";
 ```
 
 ```html
@@ -50,8 +50,8 @@ SSR. Import CSS separately so applications control stylesheet order.
 ## Vanilla JavaScript
 
 ```ts
-import { createSafeArea } from "@khm/safearea";
-import "@khm/safearea/css";
+import { createSafeArea } from "@khm-studio/safearea";
+import "@khm-studio/safearea/css";
 
 const safeArea = createSafeArea({ keyboard: true, viewport: true });
 const unsubscribe = safeArea.subscribe((state) => {
@@ -75,8 +75,8 @@ The Astro component renders static markup and adds no hydration:
 
 ```astro
 ---
-import SafeArea from "@khm/safearea/astro";
-import "@khm/safearea/css";
+import SafeArea from "@khm-studio/safearea/astro";
+import "@khm-studio/safearea/css";
 ---
 
 <SafeArea as="main" top bottom>
@@ -85,7 +85,7 @@ import "@khm/safearea/css";
 ```
 
 Props: `top`, `right`, `bottom`, `left`, `x`, `y`, `all`, `as`, and `class`. Other HTML attributes
-pass through. Import `@khm/safearea/auto` in a client entry only when measured viewport or keyboard
+pass through. Import `@khm-studio/safearea/auto` in a client entry only when measured viewport or keyboard
 state is needed; native safe-area padding works from CSS alone.
 
 ## React
@@ -93,8 +93,8 @@ state is needed; native safe-area padding works from CSS alone.
 React is an optional peer dependency.
 
 ```tsx
-import { SafeArea, useSafeArea } from "@khm/safearea/react";
-import "@khm/safearea/css";
+import { SafeArea, useSafeArea } from "@khm-studio/safearea/react";
+import "@khm-studio/safearea/css";
 
 function App() {
   const state = useSafeArea();
@@ -114,8 +114,8 @@ Vue is an optional peer dependency.
 
 ```vue
 <script setup lang="ts">
-import { SafeArea, useSafeArea } from "@khm/safearea/vue";
-import "@khm/safearea/css";
+import { SafeArea, useSafeArea } from "@khm-studio/safearea/vue";
+import "@khm-studio/safearea/css";
 const state = useSafeArea();
 </script>
 
@@ -130,8 +130,8 @@ Svelte is an optional peer dependency.
 
 ```svelte
 <script>
-  import SafeArea from "@khm/safearea/svelte";
-  import "@khm/safearea/css";
+  import SafeArea from "@khm-studio/safearea/svelte";
+  import "@khm-studio/safearea/css";
 </script>
 
 <SafeArea as="main" all>Content</SafeArea>
@@ -143,8 +143,8 @@ The optional Light DOM component works without a framework and does not initiali
 engine by itself:
 
 ```ts
-import "@khm/safearea/css";
-import "@khm/safearea/element/auto";
+import "@khm-studio/safearea/css";
+import "@khm-studio/safearea/element/auto";
 ```
 
 ```html
@@ -158,12 +158,12 @@ classes and attributes are preserved, content remains in the accessible Light DO
 retains its native behavior. For explicit registration without import side effects:
 
 ```ts
-import { defineSafeAreaElement } from "@khm/safearea/element";
+import { defineSafeAreaElement } from "@khm-studio/safearea/element";
 
 defineSafeAreaElement();
 ```
 
-Add `@khm/safearea/auto` separately if measured viewport and keyboard variables are required.
+Add `@khm-studio/safearea/auto` separately if measured viewport and keyboard variables are required.
 
 ## CSS API
 
@@ -287,7 +287,7 @@ npm run check:tarball
 
 `check` runs strict TypeScript, ESLint, Prettier verification, Vitest, the build, SSR import checks,
 framework-source compilation, and export/file validation. The current tarball is 22.9 kB compressed
-(83.1 kB unpacked, including types and source maps) with no bundled runtime dependencies.
+(83.2 kB unpacked, including types and source maps) with no bundled runtime dependencies.
 `test:browser` exercises the built package in installed Chrome at desktop and mobile viewports. Set
 `KHM_PLAYWRIGHT_CHANNEL=msedge` to use Microsoft Edge. `check:tarball` installs the actual packed
 artifact into an isolated temporary consumer and verifies core, auto, element, and SSR imports.

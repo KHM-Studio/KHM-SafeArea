@@ -1,5 +1,5 @@
-import { SafeArea, useSafeArea } from "@khm/safearea/react";
-import "@khm/safearea/css";
+import { SafeArea, useSafeArea } from "@khm-studio/safearea/react";
+import "@khm-studio/safearea/css";
 
 export function App() {
   const state = useSafeArea();

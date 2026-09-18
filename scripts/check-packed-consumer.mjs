@@ -49,9 +49,9 @@ try {
   );
 
   const verification = [
-    'import { createSafeArea } from "@khm/safearea";',
-    'import auto from "@khm/safearea/auto";',
-    'import { defineSafeAreaElement } from "@khm/safearea/element";',
+    'import { createSafeArea } from "@khm-studio/safearea";',
+    'import auto from "@khm-studio/safearea/auto";',
+    'import { defineSafeAreaElement } from "@khm-studio/safearea/element";',
     'if (typeof createSafeArea !== "function") throw new Error("Missing core export");',
     'if (auto !== undefined) throw new Error("SSR auto entry must be inert");',
     'if (defineSafeAreaElement() !== false) throw new Error("SSR element registration must be inert");',
@@ -59,7 +59,10 @@ try {
   ].join("\n");
   const consumerOutput = run(node, ["--input-type=module", "--eval", verification], temporary);
   const installedPackage = JSON.parse(
-    await readFile(join(temporary, "node_modules", "@khm", "safearea", "package.json"), "utf8")
+    await readFile(
+      join(temporary, "node_modules", "@khm-studio", "safearea", "package.json"),
+      "utf8"
+    )
   );
   if (installedPackage.version !== packed.version) {
     throw new Error("Installed package version does not match the packed artifact.");
